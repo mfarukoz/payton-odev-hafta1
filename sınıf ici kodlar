@@ -1,0 +1,7 @@
+print('boy kilo endeksi')
+print('''vucut endeksiniz için gireceğiniz değerleri
+'.'kullanarak ondalıklı sayı olarak giriniz''')  
+boy=input('boyunuzu metre cinsinden giriniz\t=')
+kilo=input('kilonuzu kilogram cınsınden giriniz\t=')
+endeks=float(kilo)/float(boy)**2
+print('_'*len('kilonuzu kilogram cinsinden giriniz\\t=\n')/2,'vucut endeks değeriniz','_'*16,'\n',' '*15,'=',endeks)
