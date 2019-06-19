@@ -1,0 +1,49 @@
+#Aylik masraf programi
+
+#imza
+isim1=['P','Y','C','O','D']
+isim2=['R','S','.','N','L']
+print('*'*62)
+print('*'*47,'| \\','*'*12,sep='')
+a=1
+for i in isim1:
+    print('*'*47,'| ',i,' '*a,'\\','*'*(11-a),sep='')
+    a+=2 
+
+print('*'*47,'| ','E',' ','mfarukoz',' |','*',sep='')
+a+=2
+for j in isim2:         
+    print('*'*47,'| ',j,' '*(22-a),'/','*'*(a-11),sep='')
+    a+=2
+print('*'*47,'| /','*'*12,sep='')    
+print('*'*62)
+
+
+#Gelir ve Harcama kalemleri veri girişi
+gelir=float(input('Aylık gelirinizi giriniz(€) = '))    
+mutfak=float(input('Aylık mutfak giderinizi giriniz(€) = '))
+egitim=float(input('Aylık eğitim giderinizi giriniz(€) = '))
+giyim=float(input('Aylık giyim giderinizi giriniz(€) = '))
+ulasim=float(input('Aylık ulaşım giderinizi giriniz(€) = '))
+
+#Harcama kalemlerinin gelire oranının hesaplanması
+mutfak=100*mutfak/gelir
+egitim=100*egitim/gelir
+giyim=100*giyim/gelir
+ulasim=100*ulasim/gelir
+
+#ekran cıktısı
+print('Aylık giderlerin aylık gelire göre yüzde oranları:')
+print('Mutfak = %',mutfak,sep='')
+print('Egitim = %',egitim,sep='')
+print('Giyim = %',giyim,sep='')
+print('Ulaşım = %',ulasim,sep='')
+
+#dosyaya yazdırma
+aylık_gider=open('Aylık giderlerin gelire göre yüzde oranları.txt','w')
+print('Aylık giderlerin aylık gelire göre yüzde oranları:',file=aylık_gider)
+print('Mutfak = %',mutfak,file=aylık_gider,sep='')
+print('Egitim = %',egitim,file=aylık_gider,sep='')
+print('Giyim = %',giyim,file=aylık_gider,sep='')
+print('Ulaşım = %',ulasim,file=aylık_gider,sep='')
+aylık_gider.close()
