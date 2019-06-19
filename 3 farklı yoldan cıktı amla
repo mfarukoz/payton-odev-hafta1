@@ -1,0 +1,32 @@
+#imza
+isim1=['P','Y','C','O','D']
+isim2=['R','S','.','N','L']
+print('*'*62)
+print('*'*47,'| \\','*'*12,sep='')
+a=1
+for i in isim1:
+    print('*'*47,'| ',i,' '*a,'\\','*'*(11-a),sep='')
+    a+=2 
+
+print('*'*47,'| ','E',' ','mfarukoz',' |','*',sep='')
+a+=2
+for j in isim2:         
+    print('*'*47,'| ',j,' '*(22-a),'/','*'*(a-11),sep='')
+    a+=2
+print('*'*47,'| /','*'*12,sep='')    
+print('*'*62)
+
+
+#Asagidaki ciktiyi 3 farkli yontem ile printler.
+print('1.\n','''Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.''')
+
+a='''Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.'''
+print('2.\n',a)
+
+
+print('3.\n',*'''Python’un kurucusu Guidon Van Rossum,
+Hollanda’nin Amsterdam’daki
+"Universiteit Van Amsterdam"
+okulundan 1982’de mezun olmuştur.''')
