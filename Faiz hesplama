@@ -1,0 +1,45 @@
+#Faiz hesaplama programi
+#Kullanicidan gerekli bilgileri alip faiz tutarini hesaplar.
+
+isim1=['P','Y','C','O','D']
+isim2=['R','S','.','N','L']
+print('*'*61)
+print('*'*46,'| \\','*'*12,sep='')
+a=1
+for i in isim1:
+    print('*'*46,'| ',i,' '*a,'\\','*'*(11-a),sep='')
+    a+=2 
+
+print('*'*46,'| ','E',' ','mfarukoz',' |','*',sep='')
+a+=2
+for j in isim2:         
+    print('*'*46,'| ',j,' '*(22-a),'/','*'*(a-11),sep='')
+    a+=2
+print('*'*46,'| /','*'*12,sep='')    
+print('*'*61)
+
+#değişken tanımlama ve veri girişi
+print('Paranızın faizini hesaplamak için aşağıdaki bilgileri giriniz') 
+ana_para=float(input('Ana para(€) ='))
+faiz_suresi=float(input('Ana para için faizin işletileceği süre(yil) ='))
+faiz_oranı=float(input('Faiz orani(yıllık %) ='))
+faiz=ana_para*faiz_suresi*faiz_oranı/100
+gunluk_faiz=faiz/365
+aylık_faiz=faiz/12
+
+#ekrana yazdırma
+print('Yatırdığınız {} tutarındaki paranın,%{} oranıyla'.format(ana_para,faiz_oranı))
+print('{} yılda faiz getirisi ='.format(faiz_suresi),faiz,'€')
+print('Faizi ile birlikte toplam para =',ana_para+faiz)
+print('Aylık ortalama faiz getirisi =',aylık_faiz,'€')
+print('Günlük ortalama faiz getirisi =',gunluk_faiz,'€ dur')
+
+#dosya açma ve dosyaya yazdırma
+faiz_hesap=open('Faiz Hesplama.txt','w')
+print('''Yatırdığınız {} tutarındaki paranın,
+%{} oranıyla'''.format(ana_para,faiz_oranı),file=faiz_hesap)
+print('{} yılda faiz getirisi ='.format(faiz_suresi),faiz,'€',file=faiz_hesap)
+print('Faizi ile birlikte toplam para =',ana_para+faiz,file=faiz_hesap)
+print('Aylık ortalama faiz getirisi =',aylık_faiz,'€',file=faiz_hesap)
+print('Günlük ortalama faiz getirisi =',gunluk_faiz,'€ dur',file=faiz_hesap)                           
+faiz_hesap.close()
